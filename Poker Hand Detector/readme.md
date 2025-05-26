@@ -1,6 +1,5 @@
 <a id="readme-top"></a>
 
-<br />
 <div align="center">
 
   [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
@@ -9,6 +8,13 @@
   [![CVZone](https://img.shields.io/badge/cvzone-informational?style=for-the-badge&logoColor=white)](https://github.com/cvzone/cvzone)
   [![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)](https://pytorch.org/)
   [![Math](https://img.shields.io/badge/Math-000000?style=for-the-badge&logoColor=white)](https://docs.python.org/3/library/math.html)
+
+<br />
+
+[![Email](https://img.shields.io/badge/dhanrajaayush123%40gmail.com-important?style=for-the-badge)](mailto:dhanrajaayush123@gmail.com)
+[![Email](https://img.shields.io/badge/ayushdhanraj.work%40gmail.com-important?style=for-the-badge)](mailto:ayushdhanraj.work@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayush-d-1759461a1)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ayush-2001-Dhanraj)
 </div>
 
 
@@ -98,8 +104,6 @@ To run the real-time poker hand recognition from your webcam:
 ```sh
 python poker_detector.py
 ```
-(Replace your_script_name.py with the actual name of your main Python script.)
-
 The application will open a window displaying the webcam feed with detected cards and the identified poker hand.
 
 You can also adapt the capture variable in the script to process a video file instead of a live webcam feed.
