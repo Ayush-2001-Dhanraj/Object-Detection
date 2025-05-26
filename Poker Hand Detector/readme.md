@@ -84,7 +84,7 @@ Ensure you have the following installed on your system:
 
 1.  Clone the repository:
     ```sh
-    git clone [https://github.com/Ayush-2001-Dhanraj/Object-Detection.git](https://github.com/Ayush-2001-Dhanraj/Object-Detection.git)
+    git clone https://github.com/Ayush-2001-Dhanraj/Object-Detection.git
     ```
 
 2.  Install the required Python packages:

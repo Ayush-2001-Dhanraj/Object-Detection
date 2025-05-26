@@ -27,7 +27,7 @@
   <p align="center">
     A project demonstrating real-time detection of essential safety equipment (hardhats, masks, safety vests) in video streams and webcam feeds using a custom-trained YOLOv8 model.
     <br />
-    <a href="/* YOUR PROJECT REPOSITORY URL HERE */"><strong>View on GitHub</strong></a>
+    <a href="https://github.com/Ayush-2001-Dhanraj/Object-Detection/tree/main/PPE%20Detection#readme"><strong>View on GitHub</strong></a>
   </p>
 </div>
 
@@ -84,7 +84,7 @@ Ensure you have the following installed on your system:
 
 1.  Clone the repository:
     ```sh
-    git clone [https://github.com/Ayush-2001-Dhanraj/Object-Detection.git](https://github.com/Ayush-2001-Dhanraj/Object-Detection.git)
+    git clone https://github.com/Ayush-2001-Dhanraj/Object-Detection.git
     ```
 
 2.  Install the required Python packages:
