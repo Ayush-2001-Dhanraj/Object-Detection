@@ -1,20 +1,21 @@
 import math
-
 from ultralytics import YOLO
 import cv2
 import cvzone
+# import torch
+from sort import *
+import numpy as np
 
-import torch
-print(torch.version.cuda)
+# print(torch.version.cuda)
 
-# For webcam
-capture = cv2.VideoCapture(0)
-capture.set(3, 1280)
-capture.set(4, 720)
+ACCEPTABLE_CLASSES = ["bicycle", "car", "motorbike", "bus", "truck"]
+VIDEO_SOURCE = "../Videos/cars_ai.mp4"
+VIDEO_MASK = "../Masks/car_ai_mask.png"
+VIDEO_GRAPHIC = "../Graphics/cars.png"
 
 # For a video
-# capture = cv2.VideoCapture("../Videos/motorbikes-1.mp4")
-
+capture = cv2.VideoCapture(VIDEO_SOURCE)
+mask = cv2.imread(VIDEO_MASK)
 
 model = YOLO("../yolo_weights/yolov8l.pt")
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
@@ -28,10 +29,19 @@ classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "trai
               "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors",
               "teddy bear", "hair drier", "toothbrush"
               ]
+tracker = Sort(max_age=20, min_hits=3, iou_threshold=0.3)
+finish_line = [300, 550, 1000, 550]
+total_cars = []
 
 while True:
     success, img = capture.read()
-    results = model(img, stream=True)
+    imgRegion = cv2.bitwise_and(img, mask)
+    graphic = cv2.imread(VIDEO_GRAPHIC, cv2.IMREAD_UNCHANGED)
+    img = cvzone.overlayPNG(img, graphic, (0, 0))
+    results = model(imgRegion, stream=True)
+
+    detections = np.empty((0, 5))
+
     for result in results:
         boxes = result.boxes
         for box in boxes:
@@ -39,16 +49,53 @@ while True:
             x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
 
             w, h = x2 - x1, y2 - y1
-            cvzone.cornerRect(img, (x1, y1, w , h))
             class_name = classNames[int(box.cls[0])]
             confidence = math.ceil((box.conf[0] * 100))/100
-            cvzone.putTextRect(
-                img,
-                f"{class_name} - {confidence}",
-                (max(0,x1), max(35, y1)),
-                scale=0.7,
-                thickness=1
-            )
 
+            if class_name in ACCEPTABLE_CLASSES and confidence > 0.3:
+                # SHow bounding rectangle
+                cvzone.cornerRect(img, (x1, y1, w, h), l=10, t=2)
+                # Show confidence and class name
+                cvzone.putTextRect(
+                    img,
+                    f"{class_name} - {confidence}",
+                    (max(0,x1), max(35, y1)),
+                    scale=0.5,
+                    thickness=1,
+                    offset=3
+                )
+                detections = np.vstack((detections, np.array([x1, y1, x2, y2, confidence])))
+
+    results_tracker = tracker.update(detections)
+
+    cv2.line(img, (finish_line[0], finish_line[1]), (finish_line[2], finish_line[3]), (0, 0, 255), 5)
+
+    for result in results_tracker:
+        x1, y1, x2, y2, id = result
+        x1, y1, x2, y2, id = int(x1), int(y1), int(x2), int(y2), int(id)
+        w, h = x2 - x1, y2 - y1
+        cvzone.cornerRect(img, (x1, y1, w, h), l=10, t=2)
+        cvzone.putTextRect(
+            img,
+            f"{id}",
+            (max(0, x1), max(35, y1)),
+            scale=1,
+            thickness=1,
+            offset=5
+        )
+        cx, cy = x1 + w//2, y1 + h//2
+        cv2.circle(img, (cx, cy), 5, (0, 0, 255))
+
+        if finish_line[0] < cx < finish_line[2] and finish_line[1] - 15 < cy < finish_line[1] + 15:
+            if id not in total_cars:
+                total_cars.append(id)
+                cv2.line(img, (finish_line[0], finish_line[1]), (finish_line[2], finish_line[3]), (0, 255, 0), 5)
+
+    # cvzone.putTextRect(
+    #     img,
+    #     f"Total: {len(total_cars)}",
+    #     (50, 50),
+    # )
+    cv2.putText(img, str(len(total_cars)), (255, 100), cv2.FONT_HERSHEY_PLAIN, 5, (50, 50, 250), 8)
     cv2.imshow("Image", img)
     cv2.waitKey(1)
