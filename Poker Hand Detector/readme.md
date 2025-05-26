@@ -2,12 +2,26 @@
 
 <br />
 <div align="center">
+
+  [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+  [![OpenCV](https://img.shields.io/badge/OpenCV-273382?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
+  [![Ultralytics YOLOv8](https://img.shields.io/badge/YOLOv8-800080?style=for-the-badge&logoColor=white)](https://ultralytics.com/)
+  [![CVZone](https://img.shields.io/badge/cvzone-informational?style=for-the-badge&logoColor=white)](https://github.com/cvzone/cvzone)
+  [![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+  [![Math](https://img.shields.io/badge/Math-000000?style=for-the-badge&logoColor=white)](https://docs.python.org/3/library/math.html)
+</div>
+
+
+<br />
+<div align="center">
+  <img src="images/logo.png" alt="Project Logo" width="150">
+
   <h3 align="center">Real-time Poker Hand Recognition</h3>
 
   <p align="center">
     A project demonstrating real-time detection of playing cards and classification of poker hands using computer vision.
     <br />
-    <a href="https://github.com/your_github_username/poker_hand_recognition"><strong>View on GitHub</strong></a>
+    <a href="https://github.com/Ayush-2001-Dhanraj/Object-Detection/tree/main/Poker%20Hand%20Detector"><strong>View on GitHub</strong></a>
   </p>
 </div>
 
@@ -101,3 +115,5 @@ Feel free to reach out if you have any questions, suggestions, or would like to 
 * [![Email](https://img.shields.io/badge/ayushdhanraj.work%40gmail.com-important?style=for-the-badge)](mailto:ayushdhanraj.work@gmail.com)
 * [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayush-d-1759461a1)
 * [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ayush-2001-Dhanraj)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
