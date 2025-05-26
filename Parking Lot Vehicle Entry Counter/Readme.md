@@ -26,7 +26,7 @@
   <p align="center">
     A project demonstrating real-time counting of vehicles entering a parking lot using computer vision techniques.
     <br />
-    <a href="YOUR_GITHUB_REPO_LINK_HERE"><strong>View on GitHub</strong></a>
+    <a href="https://github.com/Ayush-2001-Dhanraj/Object-Detection/tree/main/Parking%20Lot%20Vehicle%20Entry%20Counter#readme"><strong>View on GitHub</strong></a>
   </p>
 </div>
 
