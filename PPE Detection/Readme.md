@@ -2,11 +2,12 @@
 
 <div align="center">
 
-  [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
   [![OpenCV](https://img.shields.io/badge/OpenCV-273382?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
   [![Ultralytics YOLOv8](https://img.shields.io/badge/YOLOv8-800080?style=for-the-badge&logoColor=white)](https://ultralytics.com/)
   [![CVZone](https://img.shields.io/badge/cvzone-informational?style=for-the-badge&logoColor=white)](https://github.com/cvzone/cvzone)
-  [![Numpy](https://img.shields.io/badge/Numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+  [![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+  [![Math](https://img.shields.io/badge/Math-000000?style=for-the-badge&logoColor=white)](https://docs.python.org/3/library/math.html)
 
 <br />
 
@@ -21,12 +22,12 @@
 <div align="center">
   <img src="images/logo.png" alt="Project Logo" width="150">
 
-  <h3 align="center">Real-time Parking Lot Vehicle Entry Counter</h3>
+  <h3 align="center">Real-time PPE Compliance Monitoring System</h3>
 
   <p align="center">
-    A project demonstrating real-time counting of vehicles entering a parking lot using computer vision techniques.
+    A project demonstrating real-time detection of essential safety equipment (hardhats, masks, safety vests) in video streams and webcam feeds using a custom-trained YOLOv8 model.
     <br />
-    <a href="https://github.com/Ayush-2001-Dhanraj/Object-Detection/tree/main/Parking%20Lot%20Vehicle%20Entry%20Counter#readme"><strong>View on GitHub</strong></a>
+    <a href="/* YOUR PROJECT REPOSITORY URL HERE */"><strong>View on GitHub</strong></a>
   </p>
 </div>
 
@@ -48,9 +49,9 @@
 
 ## About The Project
 
-This project implements a real-time system to accurately count vehicles (cars, motorcycles, buses, trucks) as they enter a designated parking area. It utilizes a pre-trained YOLOv8 model for real-time object detection to identify and classify vehicles in a video stream. The SORT algorithm is then employed for robust tracking of individual vehicles across frames. A defined virtual "entry line" triggers a count increment when a unique vehicle crosses it, preventing double-counting.
+This project implements a real-time object detection system to identify the presence or absence of critical Personal Protective Equipment (PPE) such as `hardhats`, `masks`, and `safety vests`. It utilizes a custom-trained YOLOv8 model to analyze video streams from webcams or video files. The system visually highlights detected objects with bounding boxes, differentiating between the presence and absence of required PPE.
 
-This project showcases skills in computer vision, object detection, object tracking, real-time video processing, and algorithm implementation. It demonstrates the application of these technologies to a practical problem in traffic monitoring and parking management.
+This project showcases skills in computer vision, object detection using YOLOv8, real-time video processing, and the application of deep learning for safety monitoring.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -62,7 +63,8 @@ This project was built using the following key technologies:
 * [![OpenCV](https://img.shields.io/badge/OpenCV-273382?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
 * [![Ultralytics YOLOv8](https://img.shields.io/badge/YOLOv8-800080?style=for-the-badge&logoColor=white)](https://ultralytics.com/)
 * [![CVZone](https://img.shields.io/badge/cvzone-informational?style=for-the-badge&logoColor=white)](https://github.com/cvzone/cvzone)
-* [![Numpy](https://img.shields.io/badge/Numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+* [![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+* [![Math](https://img.shields.io/badge/Math-000000?style=for-the-badge&logoColor=white)](https://docs.python.org/3/library/math.html)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -92,24 +94,19 @@ Ensure you have the following installed on your system:
     *(Note: You might need to install PyTorch separately based on your system's CUDA availability. Refer to the [PyTorch website](https://pytorch.org/get-started/locally/) for specific instructions.)*
 
 3.  Download the pre-trained YOLOv8 weights (if not already present):
-    The code assumes the `yolov8l.pt` weights are in the `yolo_weights` directory. Ensure this file is present, or modify the script to point to its correct location.
-
+    The code assumes the `ppe.pt` weights are in the `yolo_weights` directory. You can train your own modal using [Construction Safety Data](https://universe.roboflow.com/roboflow-universe-projects/construction-site-safety/dataset/28/download) or use the `ppe.pt` model present in the main directory.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Usage
 
-To run the real-time parking lot entry counter from a video file:
+To run the Real-time PPE Compliance Monitoring System from your webcam:
 
-1.  Ensure you have a video file (e.g., `cars_ai.mp4`) in the specified location (`../Videos/`).
-2.  Ensure you have the mask file (`car_ai_mask.png`) in the specified location (`../Masks/`).
-3.  Run the Python script:
-    ```sh
-    python parking_lot_entry_counter.py
-    ```
+```sh
+python ppe_detection.py
+```
+The application will open a window displaying the webcam feed with detected cards and the identified poker hand.
 
-The application will process the video, display the output with detected and tracked vehicles, the entry line, and the total count of entering vehicles.
-
-You can modify the `VIDEO_SOURCE` variable in your script to use a different video file or even a live webcam feed (if adapted).
+You can also adapt the capture variable in the script to process a video file instead of a live webcam feed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
