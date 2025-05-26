@@ -1,0 +1,103 @@
+<a id="readme-top"></a>
+
+<br />
+<div align="center">
+  <h3 align="center">Real-time Poker Hand Recognition</h3>
+
+  <p align="center">
+    A project demonstrating real-time detection of playing cards and classification of poker hands using computer vision.
+    <br />
+    <a href="https://github.com/your_github_username/poker_hand_recognition"><strong>View on GitHub</strong></a>
+  </p>
+</div>
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+## About The Project
+
+This project implements a real-time system to identify playing cards from a webcam or video feed and determine the best five-card poker hand present. It utilizes a pre-trained YOLOv8 model for object detection to locate and classify individual cards. The detected cards are then processed using custom logic to evaluate the poker hand ranking.
+
+This project showcases skills in computer vision, object detection, algorithm design, and real-time processing. It serves as a demonstration of applying these technologies to a practical and engaging problem.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+This project was built using the following key technologies:
+
+* [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+* [![OpenCV](https://img.shields.io/badge/OpenCV-273382?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
+* [![Ultralytics YOLOv8](https://img.shields.io/badge/YOLOv8-800080?style=for-the-badge&logoColor=white)](https://ultralytics.com/)
+* [![CVZone](https://img.shields.io/badge/cvzone-informational?style=for-the-badge&logoColor=white)](https://github.com/cvzone/cvzone)
+* [![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+* [![Math](https://img.shields.io/badge/Math-000000?style=for-the-badge&logoColor=white)](https://docs.python.org/3/library/math.html)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Getting Started
+
+To run this project locally, follow these steps.
+
+### Prerequisites
+
+Ensure you have the following installed on your system:
+
+* Python (>= 3.7)
+* pip (Python package installer)
+
+### Installation
+
+1.  Clone the repository:
+    ```sh
+    git clone [https://github.com/Ayush-2001-Dhanraj/Object-Detection.git](https://github.com/Ayush-2001-Dhanraj/Object-Detection.git)
+    ```
+
+2.  Install the required Python packages:
+    ```sh
+    pip install -r requirements.txt
+    ```
+    *(Note: You might need to install PyTorch separately based on your system's CUDA availability. Refer to the [PyTorch website](https://pytorch.org/get-started/locally/) for specific instructions.)*
+
+3.  Download the pre-trained YOLOv8 weights (if not already present):
+    The code assumes the `playingCards.pt` weights are in the `yolo_weights` directory. You can train your own modal using [playing card data](https://universe.roboflow.com/augmented-startups/playing-cards-ow27d/dataset/4) or use the `playingcard.pt` model present in the main directory.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Usage
+
+To run the real-time poker hand recognition from your webcam:
+
+```sh
+python poker_detector.py
+```
+(Replace your_script_name.py with the actual name of your main Python script.)
+
+The application will open a window displaying the webcam feed with detected cards and the identified poker hand.
+
+You can also adapt the capture variable in the script to process a video file instead of a live webcam feed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contact
+
+Feel free to reach out if you have any questions, suggestions, or would like to collaborate!
+
+* [![Name](https://img.shields.io/badge/Ayush%20Dhanraj-informational?style=for-the-badge)](https://www.linkedin.com/in/ayush-d-1759461a1)
+* [![Email](https://img.shields.io/badge/dhanrajaayush123%40gmail.com-important?style=for-the-badge)](mailto:dhanrajaayush123@gmail.com)
+* [![Email](https://img.shields.io/badge/ayushdhanraj.work%40gmail.com-important?style=for-the-badge)](mailto:ayushdhanraj.work@gmail.com)
+* [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayush-d-1759461a1)
+* [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ayush-2001-Dhanraj)
